@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inici{% endblock %}
+{% block stylesheets %}
+{{parent()}}
+<link href="{{asset('assets/css/estilsInici.css')}}" rel="stylesheet"/>
+{% endblock %}
+{% block body %}
+
+<h1 id="titolinici">Projecte Symfony Equips 2nDAW</h1>
+<p id="paragrafinici">Inici programa gestió d'equips i membres del Projecte 2n DAW.<br>
+IES Lluis Simarro<br>Curs 23/24</p>
+<a href="{{path('dades_equips')}}"><img src="{{asset('assets/img/cta-bg.jpg')}}" class="imatgeInici"></img></a>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dades Equips{% endblock %}
+
+{% block stylesheets %}
+{{parent()}}
+<link href="{{asset('assets/css/estilsEquip.css')}}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+
+{% if equip %}
+<h1 id="titolEquip">Dades Equip {{equip.codi}}</h1>
+<div class="paragrafEquip">
+    
+    <img src="{{asset('assets/img/success.jpeg')}}" class="imatgeEquip"></img>
+    
+</div>
+
+<div class="paragrafEquip">
+    <ul>
+        <li>Codi: {{equip.codi}}</li>
+        <li>Nom: {{equip.nom}}</li>
+        <li>Cicle: {{equip.cicle}}</li>
+        <li>Curs: {{equip.curs}}</li>
+        <li>
+            Membres:
+            <ul>
+                {% for membre in equip.membres %}
+                <li>{{membre}}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="paragrafEquip">
+    <img src="{{asset('assets/img/favicon.png')}}"></img>&nbsp;<a href="{{path('inici')}}">Torna a l'inici</a>
+</div>
+
+{% else %}
+
+<h1 id="titolEquip">Dades Equip</h1>
+<p class="paragrafEquip">
+    <img src="{{asset('assets/img/failure.webp')}}" class="imatgeEquip"></img>
+</p>
+<p class="paragrafEquip">No s'ha trobat l'equip</p>
+{% endif %}
+
+
+{% endblock %}

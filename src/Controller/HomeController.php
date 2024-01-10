@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class IniciController extends AbstractController
+class HomeController extends AbstractController
 {
-    #[Route('/inici', name: 'inici')]
-    public function inici()
+    #[Route('/', name: 'home')]
+    public function home()
     {
         //return new Response('Gestió d’equips del projecte de 2n de DAW');
-        return $this->render('inici/inici.html.twig');
+        return $this->render('base.html.twig');
     }
 }
 ?>
